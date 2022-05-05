@@ -1,5 +1,6 @@
 let stars = document.querySelector('.stars');
 let star = document.querySelectorAll('.star');
+const starStatus = document.querySelector('.hidestars');
 
 
 for (let i = 0; i < star.length; i++) {
@@ -13,6 +14,7 @@ for (let i = 0; i < star.length; i++) {
             star[2].innerText = "🖤"
             star[3].innerText = "🖤"
             star[4].innerText = "🖤"
+            starStatus.value = "🧡 🖤 🖤 🖤 🖤";
         } else if (star[i].classList.contains('star2')) {
             setTimeout(() => {
                 star[0].innerText = "🧡"
@@ -23,6 +25,7 @@ for (let i = 0; i < star.length; i++) {
             star[2].innerText = "🖤"
             star[3].innerText = "🖤"
             star[4].innerText = "🖤"
+            starStatus.value = "🧡 🧡 🖤 🖤 🖤";
         } else if (star[i].classList.contains('star3')) {
             setTimeout(() => {
                 star[0].innerText = "🧡"
@@ -35,6 +38,7 @@ for (let i = 0; i < star.length; i++) {
             }, 150);
             star[3].innerText = "🖤"
             star[4].innerText = "🖤"
+            starStatus.value = "🧡 🧡 🧡 🖤 🖤";
         } else if (star[i].classList.contains('star4')) {
             setTimeout(() => {
                 star[0].innerText = "🧡"
@@ -49,6 +53,7 @@ for (let i = 0; i < star.length; i++) {
                 star[3].innerText = "🧡"
             }, 200);
             star[4].innerText = "🖤"
+            starStatus.value = "🧡 🧡 🧡 🧡 🖤";
         } else if (star[i].classList.contains('star5')) {
             setTimeout(() => {
                 star[0].innerText = "🧡"
@@ -65,6 +70,7 @@ for (let i = 0; i < star.length; i++) {
             setTimeout(() => {
                 star[4].innerText = "🧡"
             }, 250);
+            starStatus.value = "🧡 🧡 🧡 🧡 🧡";
         }
     });
 
@@ -200,4 +206,31 @@ for(let i = 0; i < items.length; i++){
 
         
     });
+}
+
+const addBook = document.querySelector('.addBook');
+const modalWindow = document.querySelector('.modal-window');
+const close = document.querySelector('.close');
+
+addBook.addEventListener('click', ()=> {
+    modalWindow.style.display = 'block';
+})
+
+close.addEventListener('click', ()=> {
+    modalWindow.style.display = 'none';
+})
+
+addBook.addEventListener('mouseover', ()=> {
+    addBook.style.cssText = "height: 41px;  box-shadow: 0 0 45px rgba(0, 0, 0, .36); padding-top: 12px;";
+    
+})
+
+addBook.addEventListener('mouseout', ()=> {
+    addBook.style.cssText = "height: 40px;  box-shadow: 0 0 45px rgba(0, 0, 0, .26); padding-top: 11px;";
+})
+
+
+
+function showStars() {
+    console.log(starStatus.value)
 }
